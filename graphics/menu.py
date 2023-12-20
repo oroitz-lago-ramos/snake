@@ -8,6 +8,7 @@ def draw_main_menu():
     screen = graphics.get_screen()
     screen.fill("green")
     bg = pygame.image.load("graphics/assets/images/bg.png")
+    bg = pygame.transform.scale(bg, (graphics.WINDOW_SIZE, graphics.WINDOW_SIZE))
     screen.blit(bg, (0, 0))
     graphics.draw_text(screen, "SNAKE GAME!", "blue", 40, 10 * graphics.CELL_SIZE, 5 * graphics.CELL_SIZE)
     # pygame.draw.rect(screen, (0, 0, 0), PLAY_BUTTON)

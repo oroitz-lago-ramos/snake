@@ -17,6 +17,7 @@ def draw_scoreboard():
         
         screen.fill("green")
         bg = pygame.image.load("graphics/assets/images/bg.png")
+        bg = pygame.transform.scale(bg, (graphics.WINDOW_SIZE, graphics.WINDOW_SIZE))
         screen.blit(bg, (0, 0))
         # pygame.draw.rect(screen, (0, 0, 0), BACK_BUTTON)
         graphics.draw_text(screen, "SCOREBOARD", "blue", 40, 10 * graphics.CELL_SIZE, 2 * graphics.CELL_SIZE)

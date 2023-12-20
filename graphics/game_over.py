@@ -11,6 +11,7 @@ def draw_game_over():
     screen = graphics.get_screen()
     screen.fill("green")
     bg = pygame.image.load("graphics/assets/images/bg.png")
+    bg = pygame.transform.scale(bg, (graphics.WINDOW_SIZE, graphics.WINDOW_SIZE))
     screen.blit(bg, (0, 0))
     graphics.draw_text(screen, "GAME OVER!", "blue", 40, 10 * graphics.CELL_SIZE, 5 * graphics.CELL_SIZE)
     graphics.draw_text(screen, "Score : " + str(score), "blue", 20, 10 * graphics.CELL_SIZE, 7 * graphics.CELL_SIZE)

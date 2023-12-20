@@ -29,6 +29,7 @@ def fill_screen():
 	global screen
 	screen.fill("green")
 	bg = pygame.image.load("graphics/assets/images/bg.png")
+	bg = pygame.transform.scale(bg, (WINDOW_SIZE, WINDOW_SIZE))
 	screen.blit(bg, (0, 0))
 
 
