@@ -3,6 +3,7 @@ import pygame,sys
 CELL_SIZE = 30
 CELL_NUMBER = 20
 WINDOW_SIZE = CELL_SIZE * CELL_NUMBER
+SNAKE_COLOR = (91,123,249)
 screen = None
 
 def init():

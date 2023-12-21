@@ -79,7 +79,7 @@ class Snake:
                 # else:
                 #     pg.draw.rect(screen,'blue', body_rectangle)
             else:
-                    pg.draw.rect(screen,'blue', body_rectangle)
+                    pg.draw.rect(screen,graphics.SNAKE_COLOR, body_rectangle)
     
     def update_head_graphics(self):
         if len(self.body) == 1:
