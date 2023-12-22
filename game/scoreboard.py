@@ -4,7 +4,6 @@ import json
 import time
 
 def add_score_to_json(score):
-    print("add json")
     scores = open_json()
     
     current_time = time.strftime('%Y-%m-%d %H:%M:%S')
@@ -18,6 +17,5 @@ def open_json():
         with open('scores.json', 'r') as file:
             scores = json.load(file)
     except FileNotFoundError:
-        print("ERRRRROR")
         scores = []
     return scores

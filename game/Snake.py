@@ -8,11 +8,12 @@ class Snake:
         self.direction = pg.Vector2(0,0)
         self.new_block = False
         
-        
+        self.one = pg.image.load("graphics/assets/images/one.png")
         self.head_up = pg.image.load("graphics/assets/images/head_up.png")
         self.head_down = pg.image.load("graphics/assets/images/head_down.png")
         self.head_right = pg.image.load("graphics/assets/images/head_right.png")
         self.head_left = pg.image.load("graphics/assets/images/head_left.png")
+        self.one = pg.transform.scale(self.one, (graphics.CELL_SIZE, graphics.CELL_SIZE))
         self.head_up = pg.transform.scale(self.head_up, (graphics.CELL_SIZE, graphics.CELL_SIZE))
         self.head_down = pg.transform.scale(self.head_down, (graphics.CELL_SIZE, graphics.CELL_SIZE))
         self.head_right = pg.transform.scale(self.head_right, (graphics.CELL_SIZE, graphics.CELL_SIZE))
@@ -79,7 +80,8 @@ class Snake:
                 # else:
                 #     pg.draw.rect(screen,'blue', body_rectangle)
             else:
-                    pg.draw.rect(screen,graphics.SNAKE_COLOR, body_rectangle)
+                    # pg.draw.rect(screen,graphics.SNAKE_COLOR, body_rectangle)
+                    screen.blit(self.one, body_rectangle)
     
     def update_head_graphics(self):
         if len(self.body) == 1:
