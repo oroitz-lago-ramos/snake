@@ -5,7 +5,7 @@ import graphics
 
 def handle_main_game_inputs():
 	"""
-	Handles all the inputs.
+	Handles main game inputs.
 	"""
 	global main_game
 	main_game = game.get_game()
@@ -34,6 +34,9 @@ def handle_main_game_inputs():
 					snake.direction = inputs.left
 
 def handle_main_menu_inputs():
+    """
+	Handles menu inputs.
+	"""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             game.stop_running()
@@ -45,6 +48,9 @@ def handle_main_menu_inputs():
                 game.change_current_status(game.SCOREBOARD)
 
 def handle_game_over_inputs():
+    """
+	Handles game-over screen inputs.
+	"""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             game.stop_running()
@@ -58,6 +64,9 @@ def handle_game_over_inputs():
                  
                  
 def handle_scoreboard_inputs():
+    """
+	Handles scoreboard inputs.
+	"""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             game.stop_running()

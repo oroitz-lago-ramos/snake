@@ -1,3 +1,4 @@
+from collections.abc import Iterable
 import game
 import graphics
 class Game:
@@ -14,10 +15,14 @@ class Game:
     def draw_elements(self):
         self.snake.draw_snake()
         self.fruit.draw_fruit()
+        graphics.draw_score()
         
     def check_collisions(self):
         if self.fruit.pos == self.snake.body[0]:
             self.fruit.randomize()
+            for i in range(len(self.snake.body)):
+                if self.snake.body[i] == self.fruit.pos:
+                    self.fruit.randomize()
             self.snake.add_block()
             
     def check_end(self):
@@ -30,6 +35,7 @@ class Game:
                 print("Game Over EATED")
                 game.change_current_status(game.GAME_OVER)
                 game.add_score_to_json(self.snake.get_score())
+                
                 
             
                 
